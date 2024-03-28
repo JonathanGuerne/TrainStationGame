@@ -96,7 +96,7 @@
             const longitude = position.coords.longitude;
 
             // http://transport.opendata.ch/v1/locations?x=...&y=...&type=station
-            fetch(`http://transport.opendata.ch/v1/locations?x=${longitude}&y=${latitude}&type=station`)
+            fetch(`https://transport.opendata.ch/v1/locations?x=${longitude}&y=${latitude}&type=station`)
                 .then(response => response.json())
                 .then(data => {
                     const stations = data.stations;
@@ -121,7 +121,7 @@
 
         const currentDate = new Date();
 
-        fetch(`http://transport.opendata.ch/v1/stationboard?station=${locationInput.value}&transportations=train&limit=10`)
+        fetch(`https://transport.opendata.ch/v1/stationboard?station=${locationInput.value}&transportations=train&limit=10`)
             .then(response => response.json())
             .then(data => {
                 const stationsboards = data.stationboard;
